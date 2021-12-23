@@ -1,0 +1,91 @@
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-11 col-lg-10 px-5 px-sm-0 m-auto">
+        <h2>Sign up</h2>
+
+        <%= form_with model: @customer, url: customer_registration_path, local: true do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+
+          <table>
+            <thead>
+              <th></th>
+              <th class="ml-3"></th>
+              <th></th>
+              <th class="ml-3"></th>
+              <th></th>
+            </thead>
+
+            <tbody>
+
+              <tr class="mt-1">
+                <td><%= f.label "名前" %></td>
+                <td>(性)</td>
+                <td><%= f.text_field :last_name, autofocus: true %></td>
+                <td>(名)</td>
+                <td><%= f.text_field :first_name, autofocus: true %></td>
+              </tr>
+
+              <tr class="mt-1">
+                <td><%= f.label "フリガナ" %></td>
+                <td>(セイ)</td>
+                <td><%= f.text_field :last_name_kana, autofocus: true %></td>
+                <td>(メイ)</td>
+                <td><%= f.text_field :first_name_kana, autofocus: true %></td>
+              </tr>
+
+              <tr class="mt-1">
+                <td><%= f.label "メールアドレス" %></td>
+                <td></td>
+                <td><%= f.email_field :email, autocomplete: "email" %></td>
+              </tr>
+
+              <tr>
+                <td><%= f.label "郵便番号(ハイフンなし)" %></td>
+                <td></td>
+                <td><%= f.text_field :postal_code, autocomplete: "postal_code" %></td>
+              </tr>
+
+              <tr>
+                <td><%= f.label "住所" %></td>
+                <td></td>
+                <td colspan="3"><%= f.text_field :address, autocomplete: "address" %></td>
+              </tr>
+
+              <tr>
+                <td><%= f.label "電話番号(ハイフンなし)" %></td>
+                <td></td>
+                <td><%= f.text_field :telephone_number, autocomplete: "telephone_number" %></td>
+              </tr>
+
+              <tr>
+                <td><%= f.label "パスワード" %>
+                <% if @minimum_password_length %>
+                <em>(<%= @minimum_password_length %> 文字以上)</em>
+                <% end %>
+                </td>
+                <td></td>
+                <td><%= f.password_field :password, autocomplete: "new-password" %></td>
+              </tr>
+
+              <tr>
+                <td><%= f.label "パスワード(確認用)" %></td>
+                <td></td>
+                <td><%= f.password_field :password_confirmation, autocomplete: "new-password" %></td>
+              </tr>
+
+              <tr>
+                <td></td>
+                <td></td>
+                <td><%= f.submit "新規登録" %></td>
+              </tr>
+            </tbody>
+          </table>
+        <% end %>
+
+
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+  </div>
+</main>

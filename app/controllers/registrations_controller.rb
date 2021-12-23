@@ -1,4 +1,4 @@
-class Public::RegistrationsController < ApplicationController
+class Devise::RegistrationsController < ApplicationController
   def new
   end
 
