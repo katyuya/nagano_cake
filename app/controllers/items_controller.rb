@@ -1,8 +1,9 @@
 class ItemsController < ApplicationController
   def index
-    @item = Item.all
+    @items = Item.page(params[:page]).reverse_order
   end
 
   def show
+    @item = Item.find(params(:id))
   end
 end

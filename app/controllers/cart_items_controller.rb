@@ -8,7 +8,7 @@ class CartItemsController < ApplicationController
   def destroy
   end
 
-  def enpty
+  def empty
   end
 
   def create

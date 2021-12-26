@@ -16,3 +16,48 @@
  @import "bootstrap";
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
+ *{
+  margin: 0;
+  padding: 0;
+ }
+
+ .address_field{
+  width: 100%;
+ }
+
+ .user{
+  width: 80%;
+  margin-top: 20px;
+ }
+
+ span{
+  background-color: #dddddd;
+ }
+
+ tr{
+  padding-top: 10px;
+ }
+
+ .email_field{
+  width: 100%;
+ }
+
+ .password_field{
+  width: 100%;
+ }
+
+ .sign{
+  width: 50%;
+ }
+
+ .border{
+  border: 5px solid black;
+  height: 50px;
+  line-height: 50px;
+ }
+
+
+
+ p{
+  margin: 0px;
+ }
