@@ -16,4 +16,5 @@ class CustomersController < ApplicationController
   def status
   end
 
+
 end

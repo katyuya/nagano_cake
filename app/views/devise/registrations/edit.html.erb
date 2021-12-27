@@ -7,7 +7,7 @@
     </div>
 
 
-    <%= form_with model: @customer, url: edit_customer_registration_path, html: { method: :put }) do |f| %>
+    <%= form_with model: @customer, url: edit_customer_registration_path, html: { method: :put } do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="row">
