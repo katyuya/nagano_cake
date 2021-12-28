@@ -1,12 +1,19 @@
 Rails.application.routes.draw do
+  
   devise_for :customers
 
 
   root to: 'homes#top'
   get '/about' => 'homes#about'
-  resources :customers
+  delete '/cart_items' => 'cart_items#destroy'
+  resource :customers
   resources :items, only:[:index, :show]
+  resources :cart_items
 
+
+devise_for :admins, controllers: {
+  sessions: 'admins/sessions'
+}
 
   namespace :admin do
     resources :customers
