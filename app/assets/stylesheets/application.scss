@@ -63,6 +63,32 @@
  }
 
  .item{
-  background-color: silver;
-  border-top: 3px solid gray;
+  background-color: #EEEEEE;
+  border-top: 3px solid #CCCCCC;
+ }
+
+ .new-item{
+  width: 100%;
+ }
+
+ .new-item-btn{
+  width: 50%;
+ }
+
+ .genre{
+  background-color: #EEEEEE;
+  border-top: 3px solid #CCCCCC;
+  border-bottom: 3px solid #CCCCCC;
+ }
+
+ .genre-item{
+  border-bottom: 3px solid #CCCCCC;
+ }
+
+ .new-genre{
+  width: 100%;
+ }
+
+ .genre-edit{
+  width: 80%;
  }

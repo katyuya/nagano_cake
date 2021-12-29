@@ -27,19 +27,19 @@
   <% @items.each do |item| %>
 
   <div class="row">
-    <div class="col-sm-1 col-md-1 col-lg-1 px-5 px-sm-0 item py-1">
+    <div class="col-sm-1 col-md-1 col-lg-1 px-5 px-sm-0 py-1">
       <%= item.id %>
     </div>
-    <div class="col-sm-3 col-md-3 col-lg-3 px-5 px-sm-0 item py-1">
-      <%= link_to item.name, edit_item_path(item.id) %>
+    <div class="col-sm-3 col-md-3 col-lg-3 px-5 px-sm-0 py-1">
+      <%= link_to item.name, item_path(item.id) %>
     </div>
-    <div class="col-sm-1 col-md-1 col-lg-1 px-5 px-sm-0 item py-1">
+    <div class="col-sm-1 col-md-1 col-lg-1 px-5 px-sm-0 py-1">
       <%= item.price %>
     </div>
-    <div class="col-sm-3 col-md-3 col-lg-3 px-5 px-sm-0 item py-1">
-      <%= item.genres.id %>
+    <div class="col-sm-3 col-md-3 col-lg-3 px-5 px-sm-0 py-1">
+      <%= item.genre_id %>
     </div>
-    <div class="col-sm-2 col-md-2 col-lg-2 px-5 px-sm-0 item py-1">
+    <div class="col-sm-2 col-md-2 col-lg-2 px-5 px-sm-0 py-1">
       <%= item.is_active %>
     </div>
   </div>
