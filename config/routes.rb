@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   devise_for :customers
 
 
@@ -18,6 +18,9 @@ devise_for :admins, controllers: {
   namespace :admin do
     resources :customers
     resources :items
+    resources :genres
+    resources :orders
+    resources :order_details
   end
 
 
