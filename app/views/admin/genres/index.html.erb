@@ -7,27 +7,27 @@
 
   <%= form_with model:@genre, url: {controller: 'admin/genres', action: 'create' } , local:true do |f| %>
     <div class="row mb-5">
-      <div class="col-sm-2 col-md-2 col-lg-2 px-5 px-sm-0 text-center">
-        <label for="genre">ジャンル名</label>
+      <div class="col-sm-2 col-md-2 col-lg-2 px-5 px-sm-0 text-center py-2">
+        <p for="genre">ジャンル名</p>
       </div>
       <div class="col-sm-3 col-md-3 col-lg-3 px-5 px-sm-0">
         <%= f.text_field :name, class: "form-control" %>
       </div>
-      <div class="col-sm-2 col-md-2 col-lg-2 px-5 px-sm-0 ml-5 ">
+      <div class="col-sm-3 col-md-3 col-lg-3 px-5 px-sm-0 ml-5 ">
         <%= f.submit '新規登録', class: "btn btn-success new-genre" %>
       </div>
-    </div
+    </div>
   <% end %>
 
   <div class="row">
-    <div class="col-sm-5 col-md-5 col-lg-5 px-5 px-sm-0 pl-5 genre pl-5">
-      <strong>ジャンル</strong>
+    <div class="col-sm-5 col-md-5 col-lg-5 px-5 px-sm-0 genre py-2">
+      <strong class="pl-5">ジャンル</strong>
     </div>
   </div>
 
   <% @genres.each do |genre| %>
   <div class="row">
-    <div class="col-sm-3 col-md-3 col-lg-3 px-5 px-sm-0 genre-item py-3">
+    <div class="col-sm-3 col-md-3 col-lg-3 px-5 px-sm-0 genre-item py-4">
       <%= genre.name %>
     </div>
     <div class="col-sm-2 col-md-2 col-lg-2 px-5 px-sm-0 py-3 genre-item">

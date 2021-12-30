@@ -7,7 +7,7 @@
   <%= form_with model: @item, url: {controller: 'admin/items', action: 'create' } , local:true do |f| %>
 
 
-  <div class="row justify-content-center mb-1">
+  <div class="row justify-content-center mb-2">
     <div class="col-sm-2 col-md-2 col-lg-2 px-5 px-sm-0">
       <p>商品画像</p>
     </div>
@@ -22,7 +22,7 @@
   </div>
 
 
-  <div class="row justify-content-center mb-1">
+  <div class="row justify-content-center mb-2">
     <div class="col-sm-2 col-md-2 col-lg-2 px-5 px-sm-0">
       <p>商品名</p>
     </div>
@@ -37,7 +37,7 @@
   </div>
 
 
-  <div class="row justify-content-center mb-1">
+  <div class="row justify-content-center mb-2">
     <div class="col-sm-2 col-md-2 col-lg-2 px-5 px-sm-0">
       <p>商品説明</p>
     </div>
@@ -51,7 +51,7 @@
   </div>
 
 
-  <div class="row justify-content-center mb-1">
+  <div class="row justify-content-center mb-2">
     <div class="col-sm-2 col-md-2 col-lg-2 px-5 px-sm-0">
       <p>税抜価格</p>
     </div>
@@ -65,17 +65,18 @@
   </div>
 
 
-  <div class="row justify-content-center mb-1">
+  <div class="row justify-content-center mb-2">
     <div class="col-sm-2 col-md-2 col-lg-2 px-5 px-sm-0">
       <p></p>
     </div>
 
     <div class="col-sm-5 col-md-5 col-lg-5 px-5 px-sm-0">
-      <%= f.submit '投稿', class: "btn btn-success new-item-btn" %>
+      <%= f.submit '新規登録', class: "btn btn-success new-item-btn" %>
     </div>
 
     <div class="col-sm-1 col-md-1 col-lg-1 px-5 px-sm-0">
       <p></p>
     </div>
   </div>
+</div>
   <% end %>

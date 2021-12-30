@@ -4,55 +4,21 @@
       <h3 class="my-3">商品一覧</h3>
     </div>
   </div>
+  <% @items.each do |item| %>
+  <div class="row">
+    <div class="col-sm-3 col-md-3 col-lg-3 px-5 px-sm-0 mb-5">
+      <%= item.image_id %>
+      <%= item.name %>
+      <%= item.price %>
+    </div>
+  </div>
 
   <div class="row">
     <div class="col-sm-3 col-md-3 col-lg-3 px-5 px-sm-0 mb-5">
-      <p>商品名</p>
-      <p>$0,000</p>
-
-    </div>
-
-    <div class="col-sm-3 col-md-3 col-lg-3 px-5 px-sm-0 mb-5">
-      <p>商品名</p>
-      <p>$0,000</p>
-
-    </div>
-
-    <div class="col-sm-3 col-md-3 col-lg-3 px-5 px-sm-0 mb-5">
-      <p>商品名</p>
-      <p>$0,000</p>
-
-    </div>
-
-    <div class="col-sm-3 col-md-3 col-lg-3 px-5 px-sm-0 mb-5">
-      <p>商品名</p>
-      <p>$0,000</p>
-
+      <%= item.image_id %>
+      <%= item.name %>
+      <%= item.price %>
     </div>
   </div>
-    <div class="row">
-    <div class="col-sm-3 col-md-3 col-lg-3 px-5 px-sm-0 mb-5">
-      <p>商品名</p>
-      <p>$0,000</p>
-
-    </div>
-
-    <div class="col-sm-3 col-md-3 col-lg-3 px-5 px-sm-0 mb-5">
-      <p>商品名</p>
-      <p>$0,000</p>
-
-    </div>
-
-    <div class="col-sm-3 col-md-3 col-lg-3 px-5 px-sm-0 mb-5">
-      <p>商品名</p>
-      <p>$0,000</p>
-
-    </div>
-
-    <div class="col-sm-3 col-md-3 col-lg-3 px-5 px-sm-0 mb-5">
-      <p>商品名</p>
-      <p>$0,000</p>
-
-    </div>
-    <%= paginate @items %>
-  </div>
+  <% end
+  <%= paginate @items %>

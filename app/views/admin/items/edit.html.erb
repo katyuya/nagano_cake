@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-7 col-lg-6 px-5 px-sm-0">
+      <h4 class="my-5 ml-4"><span class="px-4">商品編集</span></h4>
+    </div>
+  </div>
+  <%= form_with model: @item, url: {controller: 'admin/items', action: 'update' } , local:true do |f| %>
+
+
+  <div class="row justify-content-center mb-2">
+    <div class="col-sm-2 col-md-2 col-lg-2 px-5 px-sm-0">
+      <p>商品画像</p>
+    </div>
+
+    <div class="col-sm-5 col-md-5 col-lg-5 px-5 px-sm-0">
+      <%= f.attachment_field :image %>
+    </div>
+
+    <div class="col-sm-1 col-md-1 col-lg-1 px-5 px-sm-0">
+      <p></p>
+    </div>
+  </div>
+
+
+  <div class="row justify-content-center mb-2">
+    <div class="col-sm-2 col-md-2 col-lg-2 px-5 px-sm-0">
+      <p>商品名</p>
+    </div>
+
+    <div class="col-sm-5 col-md-5 col-lg-5 px-5 px-sm-0">
+      <%= f.text_field :name, class: "new-item" %>
+    </div>
+
+    <div class="col-sm-1 col-md-1 col-lg-1 px-5 px-sm-0">
+      <p></p>
+    </div>
+  </div>
+
+
+  <div class="row justify-content-center mb-2">
+    <div class="col-sm-2 col-md-2 col-lg-2 px-5 px-sm-0">
+      <p>商品説明</p>
+    </div>
+
+    <div class="col-sm-5 col-md-5 col-lg-5 px-5 px-sm-0">
+      <%= f.text_area :introduction, class: "new-item" %>
+    </div>
+    <div class="col-sm-1 col-md-1 col-lg-1 px-5 px-sm-0">
+      <p></p>
+    </div>
+  </div>
+
+
+  <div class="row justify-content-center mb-2">
+    <div class="col-sm-2 col-md-2 col-lg-2 px-5 px-sm-0">
+      <p>税抜価格</p>
+    </div>
+
+    <div class="col-sm-5 col-md-5 col-lg-5 px-5 px-sm-0">
+      <%= f.text_field :price, class: "new-item" %>
+    </div>
+    <div class="col-sm-1 col-md-1 col-lg-1 px-5 px-sm-0">
+      <p>円</p>
+    </div>
+  </div>
+
+
+  <div class="row justify-content-center mb-2">
+    <div class="col-sm-2 col-md-2 col-lg-2 px-5 px-sm-0">
+      <p></p>
+    </div>
+
+    <div class="col-sm-5 col-md-5 col-lg-5 px-5 px-sm-0">
+      <%= f.submit '変更を保存', class: "btn btn-success" %>
+    </div>
+
+    <div class="col-sm-1 col-md-1 col-lg-1 px-5 px-sm-0">
+      <p></p>
+    </div>
+  </div>
+</div>
+  <% end %>

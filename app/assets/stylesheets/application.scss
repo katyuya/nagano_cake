@@ -77,12 +77,12 @@
 
  .genre{
   background-color: #EEEEEE;
-  border-top: 3px solid #CCCCCC;
-  border-bottom: 3px solid #CCCCCC;
+  border-top: thin solid #DDDDDD;
+  border-bottom: thin solid #DDDDDD;
  }
 
  .genre-item{
-  border-bottom: 3px solid #CCCCCC;
+  border-bottom: thin solid #DDDDDD;
  }
 
  .new-genre{
@@ -92,3 +92,9 @@
  .genre-edit{
   width: 80%;
  }
+
+ .image-size{
+  width: 100%;
+  height: 100%;
+ }
+
