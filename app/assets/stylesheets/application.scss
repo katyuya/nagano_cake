@@ -75,16 +75,6 @@
   width: 50%;
  }
 
- .genre{
-  background-color: #EEEEEE;
-  border-top: thin solid #DDDDDD;
-  border-bottom: thin solid #DDDDDD;
- }
-
- .genre-item{
-  border-bottom: thin solid #DDDDDD;
- }
-
  .new-genre{
   width: 100%;
  }
@@ -95,6 +85,29 @@
 
  .image-size{
   width: 100%;
-  height: 100%;
  }
 
+ .customer-edit{
+  width: 100%;
+ }
+
+ .customer{
+  background-color: #EEEEEE;
+  border-top: thin solid #DDDDDD;
+  border-bottom: thin solid #DDDDDD;
+ }
+
+ .head{
+  background-color: #EEEEEE;
+  border-top: thin solid #DDDDDD;
+  border-bottom: thin solid #DDDDDD;
+ }
+
+ .head-item{
+  border-bottom: thin solid #DDDDDD;
+ }
+
+ .link-color{
+  text-decoration: underline;
+  color: black;
+ }

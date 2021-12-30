@@ -20,17 +20,17 @@
   <% end %>
 
   <div class="row">
-    <div class="col-sm-5 col-md-5 col-lg-5 px-5 px-sm-0 genre py-2">
+    <div class="col-sm-5 col-md-5 col-lg-5 px-5 px-sm-0 head py-2">
       <strong class="pl-5">ジャンル</strong>
     </div>
   </div>
 
   <% @genres.each do |genre| %>
   <div class="row">
-    <div class="col-sm-3 col-md-3 col-lg-3 px-5 px-sm-0 genre-item py-4">
+    <div class="col-sm-3 col-md-3 col-lg-3 px-5 px-sm-0 head-item py-4">
       <%= genre.name %>
     </div>
-    <div class="col-sm-2 col-md-2 col-lg-2 px-5 px-sm-0 py-3 genre-item">
+    <div class="col-sm-2 col-md-2 col-lg-2 px-5 px-sm-0 py-3 head-item">
       <%= link_to "編集する", edit_admin_genre_path(genre.id), class: "btn btn-success genre-edit" %>
     </div>
   </div>

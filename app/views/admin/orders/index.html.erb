@@ -1,0 +1,37 @@
+ <div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-9 col-md-9 col-lg-9 px-5 px-sm-0">
+      <h4 class="mt-5"><span class="px-4">注文履歴一覧</span></h4>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-sm-3 col-md-3 col-lg-3 px-sm-0 head py-2 mt-3">
+      <strong class="pl-2">購入日時</strong>
+    </div>
+    <div class="col-sm-3 col-md-3 col-lg-3 px-sm-0 head py-2 mt-3">
+      <strong>購入者</strong>
+    </div>
+    <div class="col-sm-3 col-md-3 col-lg-3 px-sm-0 head py-2 mt-3">
+      <strong>注文個数</strong>
+    </div>
+  </div>
+
+  <% @orders.each do |order| %>
+
+  <div class="row justify-content-center">
+    <div class="col-sm-3 col-md-3 col-lg-3 px-sm-0 head py-3">
+      <%= link_to order.create_at, admin_order_path(order.id), class: "link-color pl-2" %>
+    </div>
+    <div class="col-sm-3 col-md-3 col-lg-3 px-sm-0 head py-3">
+      <%= order.delivery_name %>
+    </div>
+    <div class="col-sm-3 col-md-3 col-lg-3 px-sm-0 head py-3">
+      <%= order.amount %>
+    </div>
+  </div>
+
+  <% end %>
+
+  <%= paginate @orders %>
+</div>
