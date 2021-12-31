@@ -30,7 +30,7 @@
   margin-top: 20px;
  }
 
- span{
+ .title{
   background-color: #dddddd;
  }
 
@@ -54,9 +54,14 @@
   border: thin solid black;
   height: 50px;
   line-height: 50px;
+  background-color: #EEEEEE;
  }
 
-
+ .grid-item{
+  border: thin solid black;
+  height: 50px;
+  line-height: 50px;
+ }
 
  p{
   margin: 0px;
@@ -111,3 +116,8 @@
   text-decoration: underline;
   color: black;
  }
+
+ .price-name{
+  font-size: 12px;
+ }
+
