@@ -59,8 +59,7 @@
 
  .grid-item{
   border: thin solid black;
-  height: 50px;
-  line-height: 50px;
+
  }
 
  p{
@@ -121,3 +120,22 @@
   font-size: 12px;
  }
 
+ .select-box{
+  height: 38px;
+ }
+
+ .cart-grid{
+  border: thin solid black;
+  height: 50px;
+  line-height: 50px;
+  background-color: #EEEEEE;
+ }
+
+ .cart-head{
+  border-top: thin solid black;
+  border-right: thin solid black;
+  border-bottom: thin solid black;
+  height: 50px;
+  line-height: 50px;
+  background-color: #EEEEEE;
+ }
