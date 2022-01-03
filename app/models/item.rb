@@ -7,7 +7,5 @@ class Item < ApplicationRecord
     (self.price * 1.10).round
   end
 
-  def total_price
-    price * CartItem.amount
-  end
+
 end

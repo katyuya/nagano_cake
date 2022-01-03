@@ -2,6 +2,7 @@ class CartItemsController < ApplicationController
   def index
     @cart_items = CartItem.all
     @items = Item.all
+    @cart_item.update
   end
 
   def update

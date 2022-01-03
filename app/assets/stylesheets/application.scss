@@ -50,13 +50,6 @@
   width: 50%;
  }
 
- .grid{
-  border: thin solid black;
-  height: 50px;
-  line-height: 50px;
-  background-color: #EEEEEE;
- }
-
  .grid-item{
   border: thin solid black;
 
@@ -66,21 +59,17 @@
   margin: 0px;
  }
 
- .item{
+ .item-head{
   background-color: #EEEEEE;
   border-top: 3px solid #CCCCCC;
  }
 
- .new-item{
+ .new{
   width: 100%;
  }
 
  .new-item-btn{
   width: 50%;
- }
-
- .new-genre{
-  width: 100%;
  }
 
  .genre-edit{
@@ -124,18 +113,35 @@
   height: 38px;
  }
 
- .cart-grid{
+ .grid{
   border: thin solid black;
-  height: 50px;
-  line-height: 50px;
   background-color: #EEEEEE;
  }
 
- .cart-head{
+ .head-grid{
   border-top: thin solid black;
   border-right: thin solid black;
   border-bottom: thin solid black;
-  height: 50px;
-  line-height: 50px;
   background-color: #EEEEEE;
+ }
+
+ .item-head-grid{
+  border-left: thin solid black;
+  border-right: thin solid black;
+  border-bottom: thin solid black;
+ }
+
+ .item-grid{
+  border-right: thin solid black;
+  border-bottom: thin solid black;
+ }
+ 
+ .item-grid-link{
+  border-bottom: thin solid black;
+ }
+
+ 
+
+ .item-image-grid{
+  height: 50px;
  }

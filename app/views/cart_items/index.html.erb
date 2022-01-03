@@ -9,23 +9,23 @@
   </div>
 
   <div class="row">
-    <div class="col-sm-4 col-md-4 col-lg-4 px-sm-0 cart-grid">
+    <div class="col-sm-4 col-md-4 col-lg-4 px-sm-0 grid">
       <strong class="pl-2">商品名</strong>
     </div>
 
-    <div class="col-sm-2 col-md-2 col-lg-2 px-sm-0 cart-head">
+    <div class="col-sm-2 col-md-2 col-lg-2 px-sm-0 head-grid">
       <strong class="pl-2">単価(税込)</strong>
     </div>
 
-    <div class="col-sm-2 col-md-2 col-lg-2 px-sm-0 cart-head">
+    <div class="col-sm-2 col-md-2 col-lg-2 px-sm-0 head-grid">
       <strong class="pl-2">数量</strong>
     </div>
 
-    <div class="col-sm-2 col-md-2 col-lg-2 px-sm-0 cart-head">
+    <div class="col-sm-2 col-md-2 col-lg-2 px-sm-0 head-grid">
       <strong class="pl-2">小計</strong>
     </div>
 
-    <div class="col-sm-2 col-md-2 col-lg-2 px-sm-0 cart-head">
+    <div class="col-sm-2 col-md-2 col-lg-2 px-sm-0 head-grid">
       <p></p>
     </div>
   </div>
@@ -33,27 +33,29 @@
 
   <div class="row">
   <% @items.each do |item| %>
-    <div class="col-sm-4 col-md-4 col-lg-4 px-sm-0 cart-grid">
-      <%= attachment_image_tag item, :image, size: "50x30", class: "p-2" %>
+    <div class="col-sm-4 col-md-4 col-lg-4 px-sm-0 item-head-grid">
+      <%= attachment_image_tag item, :image, class: "p-2 cart-item-image" %>
       <%= item.name %>
     </div>
 
-    <div class="col-sm-2 col-md-2 col-lg-2 px-sm-0 cart-head">
+    <div class="col-sm-2 col-md-2 col-lg-2 px-sm-0 item-grid">
       <%= item.add_tax_price.to_s(:delimited) %>
     </div>
 
-    <%= form_with model:@cart_item, local:true do |f| %>
-    <div class="col-sm-2 col-md-2 col-lg-2 px-sm-0 cart-head">
+
+    <div class="col-sm-2 col-md-2 col-lg-2 px-sm-0 item-grid">
+    <%= form_with model:@cart_item, url: {controller: 'cart_items', action: 'update' }, local:true do |f| %>
       <%= f.select :amount, ['1', '2', '3', '4', '5'], class: 'select-box', require: true %>
-      <%= f.submit "変更", {controller: 'cart_items', action: 'update'} %>
-    </div>
+      <%= f.submit "変更", class: "btn btn-danger" %>
     <% end %>
-
-    <div class="col-sm-2 col-md-2 col-lg-2 px-sm-0 cart-head">
-      <%= item.total_price %>
     </div>
 
-    <div class="col-sm-2 col-md-2 col-lg-2 px-sm-0 cart-head">
+
+    <div class="col-sm-2 col-md-2 col-lg-2 px-sm-0 item-grid">
+      <%= item.price %>
+    </div>
+
+    <div class="col-sm-2 col-md-2 col-lg-2 px-sm-0 item-grid">
       <%= link_to "削除する", cart_items_path, method: :delete, class: "btn btn-danger" %>
     </div>
   <% end %>
