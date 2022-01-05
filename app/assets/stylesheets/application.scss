@@ -135,13 +135,27 @@
   border-right: thin solid black;
   border-bottom: thin solid black;
  }
- 
+
+ .cart-item-grid{
+  border-top: thin solid black;
+  border-right: thin solid black;
+  border-bottom: thin solid black;
+ }
+
  .item-grid-link{
   border-bottom: thin solid black;
  }
 
- 
+
 
  .item-image-grid{
   height: 50px;
+ }
+
+ .item-number{
+  font-size: 18px;
+ }
+
+ .cart-item-image{
+  height: 40px;
  }
