@@ -7,12 +7,15 @@
   <%= form_with model: @order, local:true do |f| %>
   <div class="row">
     <div class="col-sm-10 col-md-10 col-lg-10 px-sm-0">
-      <h3>支払方法</h3>
+      <h5>支払方法</h5>
       <%= f.radio_button :payment_method, "credit_card", class: "ml-5" %>
 　　　<%= f.label :payment_method, "クレジットカード" %></br>
 　　　<%= f.radio_button :payment_method, "transfer" %>
 　　　<%= f.label :payment_method, "銀行振込" %>
-　　　<%= f.select :address_id, options_from_collection_for_select(Address.all, :id, :full_address) %>
+　　　<h5>お届け先</h5>
+　　　<%= f.radio_button :customer_id %>
+　　　<%= f.label :customer_id, "ご自身の住所"%>
+　　　<%= f.select :address_id, options_from_collection_for_select(Addresse.all, :id, :full_address) %>
 　　</div>
 　</div>
 　<% end %>

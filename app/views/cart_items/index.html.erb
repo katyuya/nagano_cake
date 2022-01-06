@@ -52,7 +52,7 @@
 
 
     <div class="col-sm-1 col-md-2 col-lg-1 item-grid py-2 pl-2">
-      <%= cart_item.subtotal %>
+      <%= cart_item.subtotal.to_s(:delimited) %>
     </div>
 
     <div class="col-sm-2 col-md-2 col-lg-1 px-sm-0 item-grid py-1 text-center">
