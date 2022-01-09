@@ -4,7 +4,7 @@
       <h5 class="mt-4 mb-3 ml-4"><span class="px-4 title">注文情報入力</span></h5>
     </div>
   </div>
-  <%= form_with model: @order,  url: {controller: '/orders', action: 'confirmation' }, local:true do |f| %>
+  <%= form_with model: @order, url: orders_confirmation_path, method: :post, local:true do |f| %>
   <div class="row mb-2">
     <div class="col-sm-12 col-md-12 col-lg-10 px-sm-0">
       <h5>支払方法</h5>
@@ -18,9 +18,8 @@
   <div class="row mb-2">
     <div class="col-sm-10 col-md-10 col-lg-10 px-sm-0">
       <h5>お届け先</h5>
-      <%= f.hidden_field :customer_id, value: @customer.id %>
-      <%= f.radio_button :address, 0, class: "ml-4" %>
-      <%= f.label :address, "ご自身の住所", class: "mb-0" %>
+      <%= f.radio_button :address_name, 0, class: "ml-4" %>
+      <%= f.label :customer_id, "ご自身の住所", class: "mb-0" %>
       <p class="ml-5">〒<%= @customer.postal_code %> <%= @customer.address %></p>
       <p class="ml-5"><%= @customer.full_name %></p>
     </div>
@@ -28,15 +27,15 @@
 
   <div class="row mb-2">
     <div class="col-sm-10 col-md-10 col-lg-10 px-sm-0">
-      <%= f.radio_button :address, 1, class: "ml-4" %>
-      <%= f.label :address, "登録済みの住所から選択", class: "mb-0" %></br>
+      <%= f.radio_button :address_name, 1, class: "ml-4" %>
+      <%= f.label :address_id, "登録済みの住所から選択", class: "mb-0" %></br>
       <p class="ml-5"><%= f.select :address_id, options_from_collection_for_select(Addresse.all, :id, :full_address) %></p>
     </div>
   </div>
 
   <div class="row">
     <div class="col-sm-10 col-md-10 col-lg-10 px-sm-0">
-      <%= f.radio_button :address, 2, class: "ml-4" %>
+      <%= f.radio_button :address_name, 2, class: "ml-4" %>
       <%= f.label :address, "新しいお届け先", class: "mb-0" %></br>
     </div>
   </div>
@@ -73,5 +72,5 @@
       <p class="text-center"><%= f.submit "確認画面へ進む", class: "btn btn-primary" %></p>
     </div>
 　</div>
-</div>
 　<% end %>
+</div>
