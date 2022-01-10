@@ -146,7 +146,22 @@
   border-bottom: thin solid black;
  }
 
+ .order-head{
+  border-top: thin solid black;
+  border-right: thin solid black;
+  border-bottom: thin solid black;
+ }
 
+ .order-grid{
+  border-left: thin solid black;
+  border-right: thin solid black;
+  border-bottom: thin solid black;
+ }
+
+ .order-grid-item{
+  border-right: thin solid black;
+  border-bottom: thin solid black;
+ }
 
  .item-image-grid{
   height: 50px;

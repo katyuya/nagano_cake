@@ -1,4 +1,68 @@
-<p>yyyy</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-md-8 col-lg-8 px-sm-0">
+      <h5 class="mt-4 mb-3 ml-4"><span class="px-4 title">注文情報入力</span></h5>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4 col-md-4 col-lg-3 px-sm-0 grid py-2">
+      <strong class="pl-2">商品名</strong>
+    </div>
+
+    <div class="col-sm-2 col-md-2 col-lg-1 px-sm-0 head-grid py-2">
+      <strong class="pl-2">単価(税込)</strong>
+    </div>
+
+    <div class="col-sm-1 col-md-1 col-lg-1 px-sm-0 head-grid py-2">
+      <strong class="pl-2">数量</strong>
+    </div>
+
+    <div class="col-sm-1 col-md-1 col-lg-1 px-sm-0 head-grid py-2">
+      <strong class="pl-2">小計</strong>
+    </div>
+
+    <div class="col-sm-1 col-md-1 col-lg-1 px-sm-0 grid py-2">
+      <strong class="pl-2">送料</strong>
+    </div>
+
+    <div class="col-sm-1 col-md-1 col-lg-1 px-sm-0 order-head py-2">
+      <strong class="pl-2">800</strong>
+    </div>
+
+
+  </div>
+
+  <% @cart_items.each do |cart_item| %>
+
+  <div class="row">
+    <div class="col-sm-4 col-md-4 col-lg-3 px-sm-0 item-head-grid">
+      <%= attachment_image_tag cart_item.item, :image, class: "p-2 cart-item-image" %>
+      <%= cart_item.item.name %>
+    </div>
+
+    <div class="col-sm-2 col-md-2 col-lg-1 pl-2 item-grid py-2">
+      <%= cart_item.item.with_tax_price.to_s(:delimited) %>
+    </div>
+
+
+    <div class="col-sm-1 col-md-1 col-lg-2 item-grid py-1 px-1 pl-2">
+      <%= cart_item.amount %>
+    </div>
+
+
+    <div class="col-sm-1 col-md-1 col-lg-1 item-grid py-2 pl-2">
+      <%= cart_item.subtotal.to_s(:delimited) %>
+    </div>
+
+    <div class="col-sm-1 col-md-1 col-lg-1 px-sm-0 grid py-2">
+      <strong class="pl-2">商品合計</strong>
+    </div>
+
+    <div class="col-sm-1 col-md-1 col-lg-1 px-sm-0 order-head py-2">
+      <strong class="pl-2"></strong>
+    </div>
+  </div>
+  <% end %>
 <%= @order.payment_method_i18n %>
 
 <%= @order.shipping_zip_code %><%= @order.shipping_address %>
