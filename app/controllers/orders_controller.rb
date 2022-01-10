@@ -7,16 +7,16 @@ class OrdersController < ApplicationController
 
   def confirmation
     @order = Order.new(order_params)
-    if "ご自身の住所"
+    if params[:order][:address_name] == "0"
       @order.shipping_zip_code = current_customer.postal_code
       @order.shipping_address = current_customer.address
       @order.delivery_name = current_customer.last_name + current_customer.first_name
-    elsif "登録済みの住所から選択"
+    elsif params[:order][:address_name] == "1"
       @address = Addresse.find(params[:order][:address_id])
       @order.shipping_zip_code = @address.postal_code
       @order.shipping_address = @address.address
       @order.delivery_name = @address.name
-    elsif "新しいお届け先"
+    elsif params[:order][:address_name] == "2"
 
     else
       redirect_to new_orders_path
