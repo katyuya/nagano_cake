@@ -8,6 +8,7 @@ class OrdersController < ApplicationController
   def confirmation
     @cart_items = current_customer.cart_items
     @total = @cart_items.inject(0) { |sum, item| sum + item.subtotal }
+    @total_price = (@total + 800)
     @order = Order.new(order_params)
     if params[:order][:address_name] == "0"
       @order.shipping_zip_code = current_customer.postal_code
@@ -31,16 +32,21 @@ class OrdersController < ApplicationController
   def create
     cart_items = current_customer.cart_items.all
     @order = current_customer.orders.new(order_params)
-    @order.save
-    cart_items.each do |cart_item|
-      order_detail = OrderDetail.new
-      order_detail.item_id = cart_item.item_id
-      order_detail.order_id = @order.id
-      order_detail.amount = cart_item.amount
-      order_detail.price_time = cart_item.item.price
-      order_detail.save
+    if @order.save
+      cart_items.each do |cart_item|
+        order_detail = OrderDetail.new
+        order_detail.item_id = cart_item.item_id
+        order_detail.order_id = @order.id
+        order_detail.amount = cart_item.amount
+        order_detail.price_time = cart_item.item.price
+        order_detail.save
+      end
       redirect_to orders_thanks_path
       cart_items.destroy_all
+    else
+      @order = Order.new(order_params)
+      render :new
+    end
   end
 
   def index
