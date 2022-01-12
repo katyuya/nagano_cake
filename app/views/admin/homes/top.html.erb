@@ -17,17 +17,17 @@
     </div>
   </div>
 
-  <% @orders.each do |order| %>
+  <% @order_details.each do |order_detail| %>
 
   <div class="row justify-content-center">
     <div class="col-sm-3 col-md-3 col-lg-3 px-sm-0 head py-3">
-      <%= link_to order.created_at, admin_order_path(order.id), class: "link-color pl-2" %>
+      <%= link_to order_detail.order.created_at, admin_order_path(order.id), class: "link-color pl-2" %>
     </div>
     <div class="col-sm-3 col-md-3 col-lg-3 px-sm-0 head py-3">
-      <%= order.delivery_name %>
+      <%= order_detail.order.delivery_name %>
     </div>
     <div class="col-sm-3 col-md-3 col-lg-3 px-sm-0 head py-3">
-      <%= order.order_details.amount %>
+      <%= order_detail.order.amount %>
     </div>
   </div>
 

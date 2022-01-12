@@ -50,6 +50,8 @@ class OrdersController < ApplicationController
   end
 
   def index
+    @order_details = current_customer.order_ids
+
   end
 
   def show
