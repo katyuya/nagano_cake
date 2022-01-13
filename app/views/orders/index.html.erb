@@ -7,31 +7,31 @@
   <table>
     <thead>
       <tr>
-        <th class="pl-2">注文日</th>
-        <th class="pl-2">配送先</th>
-        <th class="pl-2">注文商品</th>
-        <th class="pl-2">支払金額</th>
-        <th class="pl-2">ステータス</th>
-        <th class="pl-2">注文詳細</th>
+        <th class="pl-2 grid">注文日</th>
+        <th class="pl-2 grid">配送先</th>
+        <th class="pl-2 grid">注文商品</th>
+        <th class="pl-2 pr-sm-2 grid">支払金額</th>
+        <th class="pl-2 pr-sm-2 grid">ステータス</th>
+        <th class="pl-2 pr-sm-2 grid">注文詳細</th>
       </tr>
     </thead>
     <tbody>
       <% @orders.each do |order| %>
       <tr>
-        <td class="pl-2 pr-5"><%= order.created_at.strftime("%Y/%m/%d") %></td>
-        <td class="pl-2 pr-5">
+        <td class="pl-2 pr-5 pr-sm-2 grid-item"><%= order.created_at.strftime("%Y/%m/%d") %></td>
+        <td class="pl-2 pr-5 pr-sm-2 grid-item">
           〒<%= order.shipping_zip_code %></br>
           <%= order.shipping_address %></br>
           <%= order.delivery_name %>
         </td>
-        <td class="pl-2 pr-2">
+        <td class="pl-2 pr-sm-2 grid-item">
           <% order.order_details.each do |order_detail| %>
             <%= order_detail.item.name %>
           <% end %>
         </td>
-        <td class="pl-2"><%= order.billing.to_i.to_s(:delimited) %>円</td>
-        <td class="pl-2"></td>
-        <td class="pl-3 pr-3"><%= link_to "表示する", order_path(order.id), class: "btn btn-primary" %></td>
+        <td class="pl-2 pr-sm-2 grid-item"><%= order.billing.to_i.to_s(:delimited) %>円</td>
+        <td class="pl-2 pr-sm-2 grid-item"><%= order.received %></td>
+        <td class="p-sm-2 grid-item"><%= link_to "表示する", order_path(order.id), class: "btn btn-primary" %></td>
       </tr>
       <% end %>
     </tbody>
