@@ -50,7 +50,7 @@ class OrdersController < ApplicationController
   end
 
   def index
-    @order_details = current_customer.order_ids
+    @orders = current_customer.orders
 
   end
 
@@ -60,6 +60,6 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:customer_id, :shipping_zip_code, :shipping_address, :delivery_name, :payment_method)
+    params.require(:order).permit(:customer_id, :shipping_zip_code, :shipping_address, :delivery_name, :payment_method, :billing)
   end
 end
