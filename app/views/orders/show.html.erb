@@ -1,0 +1,84 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-md-8 col-lg-8 px-sm-0">
+      <h5 class="mt-4 mb-5 ml-4"><span class="px-4 title">注文情報入力</span></h5>
+    </div>
+  </div>
+  <div class="table-style">
+    <div class="mr-2">
+      <table>
+        <thead>
+          <tr>
+            <th class="py-2">注文情報</th>
+          </tr>
+          <tr>
+            <td class="grid">注文日</td>
+            <td class="p-sm-2 grid-item"><%= @order.created_at.strftime("%Y/%m/%d") %></td>
+          </tr>
+          <tr>
+            <td class="pl-1 pr-5 py-2 grid">配送先</td>
+            <td class="p-sm-2 grid-item">
+              〒<%= @order.shipping_zip_code %></br>
+              <%= @order.shipping_address %></br>
+              <%= @order.delivery_name %>
+            </td>
+          </tr>
+          <tr>
+            <td class="pl-1 pr-5 py-2 grid">支払方法</td>
+            <td class="p-sm-2 grid-item"><%= @order.payment_method_i18n %></td>
+          </tr>
+          <tr>
+            <td class="pl-1 pr-5 py-2 grid">ステータス</td>
+            <td class="p-sm-2 grid-item"><%= @order.received %></td>
+          </tr>
+        </thead>
+      </table>
+    </div>
+
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th class="py-2">請求情報</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="pl-1 pr-5 py-2 grid">商品合計</td>
+            <td class="pl-1 pr-5 py-2 grid-item"><%= @order.order_price.to_s(:delimited) %></td>
+          </tr>
+          <tr>
+            <td class="pl-1 pr-5 py-2 grid">配送料</td>
+            <td class="pl-1 pr-5 py-2 grid-item">800</td>
+          </tr>
+          <tr>
+            <td class="pl-1 pr-5 py-2 grid">ご請求額</td>
+            <td class="pl-1 pr-5 py-2 grid-item"><%= @order.billing.to_i.to_s(:delimited) %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th class="py-2">注文内容</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="pl-1 pr-5 py-2 grid">商品</td>
+        <td class="pl-1 pr-5 py-2 grid">単価（税込）</td>
+        <td class="pl-1 pr-5 py-2 grid">個数</td>
+        <td class="pl-1 pr-5 py-2 grid">小計</td>
+      </tr>
+      <% @order.order_details.each do |order_detail| %>
+      <tr>
+        <td class="pl-1 pr-5 py-2 grid-item"><%= order_detail.item.name %></td>
+        <td class="pl-1 pr-5 py-2 grid-item"><%= order_detail.price_detail %></td>
+        <td class="pl-1 pr-5 py-2 grid-item"><%= order_detail.amount %></td>
+        <td class="pl-1 pr-5 py-2 grid-item"><%= order_detail.detail_price %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
