@@ -3,13 +3,7 @@ class OrderDetail < ApplicationRecord
   belongs_to :order
   belongs_to :item
 
-  array = []
-  OrderDetail.all.each do |order_detail|
-    array << order_detail.amount
-  end
-  array.sum
-
-  OrderDetail.all.sum(:amount)
+  enum making_status: { 着手不可: 0, 製作中: 1, 製作完了: 2 }
 
   def detail_price
     price_detail * amount

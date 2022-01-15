@@ -188,7 +188,11 @@
   display: flex;
  }
 
- .page{
-  display: flex;
-  justify-content: space-around;
+ .order{
+  border-top: thin solid #DDDDDD;
+  border-bottom: thin solid #DDDDDD;
+ }
+
+ .order-item{
+  background-color: #EEEEEE;
  }
