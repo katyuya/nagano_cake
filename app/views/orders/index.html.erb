@@ -30,7 +30,7 @@
           <% end %>
         </td>
         <td class="pl-2 pr-sm-2 grid-item"><%= order.billing.to_i.to_s(:delimited) %>円</td>
-        <td class="pl-2 pr-sm-2 grid-item"><%= order.received %></td>
+        <td class="pl-2 pr-sm-2 grid-item"><%= order.received_i18n %></td>
         <td class="p-sm-2 grid-item"><%= link_to "表示する", order_path(order.id), class: "btn btn-primary" %></td>
       </tr>
       <% end %>

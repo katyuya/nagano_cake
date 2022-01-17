@@ -1,4 +1,5 @@
 class Admin::OrdersController < ApplicationController
+  before_action :authenticate_admin!
 
   def show
     @order = Order.find(params[:id])
@@ -7,7 +8,7 @@ class Admin::OrdersController < ApplicationController
 
   def update
     @order = Order.find(params[:id])
-    @order.update(order_params)
+    @order.update(received:params[:order][:received])
     redirect_to admin_path
   end
 

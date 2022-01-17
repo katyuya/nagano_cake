@@ -3,7 +3,12 @@ class OrderDetail < ApplicationRecord
   belongs_to :order
   belongs_to :item
 
-  enum making_status: { 着手不可: 0, 製作中: 1, 製作完了: 2 }
+  enum making_status: {
+    restricting: 0,
+    waiting: 1,
+    producing: 2,
+    preparing: 3
+  }
 
   def detail_price
     price_detail * amount

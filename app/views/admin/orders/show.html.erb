@@ -4,6 +4,7 @@
       <h4 class="mt-5 mb-3"><span class="px-4 title">注文履歴一覧</span></h4>
     </div>
   </div>
+
   <table>
     <tbody>
       <tr>
@@ -25,18 +26,19 @@
         <td class="pr-3"><strong>支払方法</strong></td>
         <td class="pr-3"><%= @order.payment_method_i18n %></td>
       </tr>
-      <%= form_with model: @order, url: admin_order_path(@order.id), local:true do |f| %>
       <tr>
         <td class="pr-3"><strong>注文ステータス</strong></td>
         <td class="pr-3 py-2">
-          <%= f.select :received, options_for_select(Order.receiveds), class: "prefecture-select" %>
-
+        <%= form_with model: @order, url: admin_order_path(@order.id), local:true do |f| %>
+          <%= f.select :received, options_for_select(Order.receiveds_i18n.invert,@order.received), class: "prefecture-select" %>
           <%= f.submit "更新", class: "btn btn-sm btn-success ml-3" %>
+        <% end %>
         </td>
       </tr>
-      <% end %>
     </tbody>
   </table>
+
+
   <table class="order">
     <thead class="order-item">
       <tr>
@@ -55,10 +57,12 @@
         <td class="pl-3 pr-5 py-2"><%= order_detail.price_detail.to_s(:delimited) %></td>
         <td class="pl-3 pr-5 py-2"><%= order_detail.amount %></td>
         <td class="pr-5 py-2"><%= order_detail.detail_price.to_s(:delimited) %></td>
-        <%= form_with model: @order_detail, url: admin_order_detail_path(@order_detail.id), local:true do |f| %>
-        <td class="px-2 py-2"><%= f.select :making_status, options_for_select(OrderDetail.making_statuses) %></td>
-        <td class="px-2 py-2"><%= f.submit "更新", class: "btn btn-sm btn-success ml-3" %></td>
+        <td clospan="2" class="px-2 py-2">
+        <%= form_with model: order_detail, url: admin_order_detail_path(order_detail.id), local:true do |f| %>
+          <%= f.select :making_status, options_for_select(OrderDetail.making_statuses_i18n.invert,order_detail.making_status) %>
+          <%= f.submit "更新", class: "btn btn-sm btn-success ml-3" %>
         <% end %>
+        </td>
       </tr>
       <% end %>
     </tbody>
