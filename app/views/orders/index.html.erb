@@ -18,8 +18,8 @@
     <tbody>
       <% @orders.each do |order| %>
       <tr>
-        <td class="pl-2 pr-5 pr-sm-2 grid-item"><%= order.created_at.strftime("%Y/%m/%d") %></td>
-        <td class="pl-2 pr-5 pr-sm-2 grid-item">
+        <td class="pl-2 pr-5 grid-item"><%= order.created_at.strftime("%Y/%m/%d") %></td>
+        <td class="pl-2 pr-5 grid-item">
           〒<%= order.shipping_zip_code %></br>
           <%= order.shipping_address %></br>
           <%= order.delivery_name %>
@@ -29,8 +29,8 @@
             <%= order_detail.item.name %>
           <% end %>
         </td>
-        <td class="pl-2 pr-sm-2 grid-item"><%= order.billing.to_i.to_s(:delimited) %>円</td>
-        <td class="pl-2 pr-sm-2 grid-item"><%= order.received_i18n %></td>
+        <td class="pl-2 pr-3 grid-item"><%= order.billing.to_i.to_s(:delimited) %>円</td>
+        <td class="pl-2 pr-4 grid-item"><%= order.received_i18n %></td>
         <td class="p-sm-2 grid-item"><%= link_to "表示する", order_path(order.id), class: "btn btn-primary" %></td>
       </tr>
       <% end %>

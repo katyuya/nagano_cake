@@ -1,50 +1,33 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-12 col-md-7 col-lg-6 px-5 px-sm-0">
+    <div class="col-sm-8 col-md-8 col-lg-6 px-5 px-sm-0">
       <h4 class="my-5 ml-4"><span class="px-4 title">商品一覧</span></h4>
-      <%= link_to "商品新規登録", new_admin_item_path %>
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-6 px-5 px-sm-0 text-right new-item">
+      <p class="pt-5"><%= link_to "+", new_admin_item_path, class: "btn btn-outline-secondary" %></p>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-sm-1 col-md-1 col-lg-1 px-5 px-sm-0 item-head py-1">
-      <strong>商品ID</strong>
-    </div>
-    <div class="col-sm-3 col-md-3 col-lg-3 px-5 px-sm-0 item-head py-1">
-      <strong>商品名</strong>
-    </div>
-    <div class="col-sm-1 col-md-1 col-lg-1 px-5 px-sm-0 item-head py-1">
-      <strong>税抜価格</strong>
-    </div>
-    <div class="col-sm-3 col-md-3 col-lg-3 px-5 px-sm-0 item-head py-1">
-      <strong>ジャンル</strong>
-    </div>
-    <div class="col-sm-2 col-md-2 col-lg-2 px-5 px-sm-0 item-head py-1">
-      <strong>ステータス</strong>
-    </div>
-  </div>
 
-  <% @items.each do |item| %>
+      <table class="table order">
+        <thead class="order-item">
+          <tr>
+            <th>商品ID</th>
+            <th>商品名</th>
+            <th>税抜価格</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @items.each do |item| %>
+          <tr>
+            <td><%= item.id %></td>
+            <td><%= link_to item.name, admin_item_path(item.id), class: "link-color" %></td>
+            <td><%= item.price.to_s(:delimited) %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
 
-  <div class="row">
-    <div class="col-sm-1 col-md-1 col-lg-1 px-5 px-sm-0 py-1">
-      <%= item.id %>
-    </div>
-    <div class="col-sm-3 col-md-3 col-lg-3 px-5 px-sm-0 py-1">
-      <%= link_to item.name, admin_item_path(item.id), class: "link-color" %>
-    </div>
-    <div class="col-sm-1 col-md-1 col-lg-1 px-5 px-sm-0 py-1">
-      <%= item.price.to_s(:delimited) %>
-    </div>
-    <div class="col-sm-3 col-md-3 col-lg-3 px-5 px-sm-0 py-1">
-      <%= item.genre_id %>
-    </div>
-    <div class="col-sm-2 col-md-2 col-lg-2 px-5 px-sm-0 py-1">
-      <%= item.is_active %>
-    </div>
-  </div>
-
-  <% end %>
 
   <%= paginate @items %>
 

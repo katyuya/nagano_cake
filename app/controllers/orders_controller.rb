@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   before_action :authenticate_customer!
   def new
     @customer = current_customer
-    @address = current_customer.address
+    @addresse = current_customer.addresse
     @order = Order.new
   end
 

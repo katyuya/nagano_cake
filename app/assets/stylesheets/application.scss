@@ -197,7 +197,38 @@
   background-color: #EEEEEE;
  }
 
-
- .table-block{
-  display:block;
+ .pagination{
+  justify-content: center;
  }
+
+ .first{
+  padding-left: 10px;
+ }
+
+ .prev{
+  padding-left: 10px;
+ }
+
+ .page{
+  padding-left: 10px;
+ }
+
+ .next{
+  padding-left: 10px;
+ }
+
+ .last{
+  padding-left: 10px;
+ }
+
+ .new-item{
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+ }
+
+ .order-show{
+  display: flex;
+  align-items: flex-end;
+ }
+

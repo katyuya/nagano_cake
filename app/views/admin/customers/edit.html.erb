@@ -72,9 +72,9 @@
       <strong>会員ステータス</strong>
     </div>
     <div class="col-sm-3 col-md-3 col-lg-2 px-sm-0">
-      <%= f.radio_button :is_active, "有効" %>
+      <%= f.radio_button :is_active, true %>
       <%= f.label :is_active, "有効", class: "mb-0" %>
-      <%= f.radio_button :is_active, "退会済み" %>
+      <%= f.radio_button :is_active, false %>
       <%= f.label :is_active, "退会済み", class: "mb-0" %>
     </div>
   </div>
