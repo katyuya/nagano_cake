@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2021_12_27_100545) do
     t.string "postal_code"
     t.string "address"
     t.string "telephone_number"
-    t.boolean "is_active"
+    t.boolean "is_active", default: true, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_customers_on_email", unique: true
@@ -94,7 +94,7 @@ ActiveRecord::Schema.define(version: 2021_12_27_100545) do
     t.integer "postage"
     t.integer "billing"
     t.integer "payment_method"
-    t.integer "received"
+    t.integer "received", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
