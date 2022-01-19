@@ -29,7 +29,7 @@
     <div class="col-sm-10 col-md-10 col-lg-10 px-sm-0">
       <%= f.radio_button :address_name, 1, class: "ml-4" %>
       <%= f.label :address_id, "登録済みの住所から選択", class: "mb-0" %></br>
-      <p class="ml-5"><%= f.select :address_id, options_from_collection_for_select(Addresse.all, :id, :full_address) %></p>
+      <p class="ml-5"><%= f.select :address_id, options_from_collection_for_select(Address.all, :id, :full_address) %></p>
     </div>
   </div>
 
