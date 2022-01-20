@@ -65,10 +65,10 @@
       <%= address.name %>
     </div>
     <div class="col-sm-2 col-md-2 col-lg-1 item-grid-link text-right pr-sm-1 py-2 pl-2">
-      <%= link_to "編集する", edit_address_path(addresse.id), class: "btn btn-success btn-sm" %>
+      <%= link_to "編集する", edit_address_path(address.id), class: "btn btn-success btn-sm" %>
     </div>
     <div class="col-sm-2 col-md-2 col-lg-1 px-sm-0 item-grid pl-sm-1 py-2">
-      <%= link_to "削除する", address_path(addresse.id), method: :delete, class: "btn btn-danger btn-sm" %>
+      <%= link_to "削除する", address_path(address.id), method: :delete, class: "btn btn-danger btn-sm" %>
     </div>
   <% end %>
   </div>

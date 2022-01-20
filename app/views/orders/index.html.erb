@@ -16,7 +16,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @orders.each do |order| %>
+      <% @orders.reverse.each do |order| %>
       <tr>
         <td class="pl-2 pr-5 grid-item"><%= order.created_at.strftime("%Y/%m/%d") %></td>
         <td class="pl-2 pr-5 grid-item">
