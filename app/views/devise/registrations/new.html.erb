@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-12 col-md-10 col-lg-8 px-5 px-sm-0 mx-auto">
-        <h5 class="m-5"><span class="px-3">新規会員登録</span></h5>
+        <h5 class="m-5"><span class="px-3 title">新規会員登録</span></h5>
 
         <%= form_with model: @customer, url: customer_registration_path, local: true do |f| %>
           <%= render "devise/shared/error_messages", resource: resource %>
@@ -82,7 +82,7 @@
           </table>
         <% end %>
         <div class="ml-5 mt-4">
-          <h5><span class="px-3">既に登録済みの方</span></h5>
+          <h5><span class="px-3 title">既に登録済みの方</span></h5>
 
           <p class="my-3 ml-5"><%= link_to "こちら", new_customer_session_path %>からログインしてください</p>
         </div>
