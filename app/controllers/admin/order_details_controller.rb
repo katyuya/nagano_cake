@@ -5,10 +5,4 @@ class Admin::OrderDetailsController < ApplicationController
     @order_detail.update(making_status:params[:order_detail][:making_status])
     redirect_to admin_path
   end
-
-  private
-
-  def order_detail_params
-    params.require(:order_detail).permit(:making_status)
-  end
 end
