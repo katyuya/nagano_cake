@@ -8,9 +8,10 @@ class Admin::OrdersController < ApplicationController
 
   def update
     @order = Order.find(params[:id])
-    received_change_to_1 = @order.received_was == 0 and @order.received == 1
     @order.update(received:params[:order][:received])
-    @order.order_details.update_all(making_status: 1)
+    if @order.received == "confirmation"
+      @order.order_details.update_all(making_status: 1)
+    end
     redirect_to admin_order_path(@order.id)
   end
 
